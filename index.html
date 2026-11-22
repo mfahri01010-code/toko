@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SALSABILA CLOTHING - Style Your Day, Define Yourself.</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:'Poppins',sans-serif;background:#F7F7F3;color:#1a2e22}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;border:none;touch-action:manipulation;position:relative;z-index:2;font-family:'Poppins',sans-serif}
+img{width:100%;display:block;object-fit:cover}
+.wrap{max-width:1200px;margin:auto;padding:0 14px}
+.hidden{display:none!important}
+/* TOPBAR */
+.topbar{background:#064E3B;color:#fff;font-size:12px;padding:7px 0;text-align:center}
+.topbar b{color:#FDE68A}
+/* HEADER */
+header{position:sticky;top:0;z-index:100;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06);padding:12px 0}
+.h-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.logo{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;line-height:1;cursor:pointer}
+.logo span{color:#059669;display:block;font-size:10px;font-family:'Poppins',sans-serif;letter-spacing:2px;font-weight:700}
+.logo em{font-style:normal;color:#059669}
+.search-box{flex:1;display:flex;background:#F3F4F1;border:1.5px solid #E5E7EB;border-radius:12px;overflow:hidden;min-width:200px}
+.search-box input{flex:1;border:none;outline:none;padding:12px 14px;background:transparent;font-size:14px}
+.search-box button{background:#059669;color:#fff;padding:0 18px;font-weight:700}
+.h-icons{display:flex;gap:6px;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:12px;background:#F3F4F1;display:flex;align-items:center;justify-content:center;font-size:20px;position:relative}
+.badge{position:absolute;top:-4px;right:-4px;background:#EF4444;color:#fff;font-size:10px;min-width:18px;height:18px;border-radius:999px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 4px}
+.btn-login{padding:10px 16px;border-radius:999px;background:#fff;border:1.5px solid #059669;color:#059669;font-weight:700}
+.btn-daftar{padding:10px 18px;border-radius:999px;background:#059669;color:#fff;font-weight:700}
+.cat-row{display:flex;gap:8px;overflow-x:auto;padding:10px 0 2px;white-space:nowrap;scrollbar-width:none}
+.cat-row::-webkit-scrollbar{display:none}
+.cat-pill{background:#F3F4F1;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:600}
+.cat-pill.active{background:#064E3B;color:#fff}
+/* HERO */
+.hero{margin:16px 0;display:grid;grid-template-columns:1.4fr .6fr;gap:14px}
+@media(max-width:750px){.hero{grid-template-columns:1fr}.h-row{flex-wrap:wrap}.search-box{order:3;width:100%;flex:none}}
+.hero-main{border-radius:20px;overflow:hidden;position:relative;min-height:340px;background:#064E3B;color:#fff;display:flex;align-items:center}
+.hero-main img{position:absolute;inset:0;height:100%;opacity:.45}
+.hero-content{position:relative;padding:28px;max-width:520px}
+.hero-content .tag{background:#FDE68A;color:#064E3B;padding:6px 12px;border-radius:999px;font-size:12px;font-weight:800;display:inline-block}
+.hero-content h1{font-size:36px;line-height:1.15;margin:12px 0;font-family:'Playfair Display',serif}
+@media(max-width:650px){.hero-content h1{font-size:28px}}
+.hero-content p{font-size:14px;opacity:.9;line-height:1.6}
+.btn-hero{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
+.btn-hero button{padding:13px 20px;border-radius:999px;font-weight:700}
+.btn-white{background:#fff;color:#064E3B}
+.btn-outline{background:transparent;color:#fff;border:1.5px solid #fff}
+.hero-side{display:flex;flex-direction:column;gap:14px}
+.mini-card{flex:1;border-radius:20px;overflow:hidden;position:relative;min-height:160px;color:#fff;display:flex;align-items:flex-end}
+.mini-card img{position:absolute;inset:0;height:100%}
+.mini-card div{position:relative;padding:16px;background:linear-gradient(transparent,rgba(0,0,0,.7));width:100%}
+/* FLASH */
+.flash{background:#fff;border:2px solid #F59E0B;border-radius:18px;padding:16px;margin:10px 0}
+.flash-head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.timer{display:flex;gap:6px}
+.timer span{background:#111;color:#fff;padding:8px 10px;border-radius:8px;font-weight:800;font-size:16px}
+.timer small{color:#EF4444;font-weight:700}
+/* SECTION */
+.sec{margin:22px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.sec-head h2{font-size:20px}
+.sec-head p{font-size:13px;color:#777}
+.cats-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+@media(max-width:750px){.cats-grid{grid-template-columns:repeat(3,1fr)}}
+.cat-card{background:#fff;border-radius:16px;padding:14px;text-align:center;cursor:pointer;border:1px solid #eee}
+.cat-card img{height:70px;border-radius:12px}
+.cat-card b{font-size:13px;display:block;margin-top:8px}
+.cat-card span{font-size:11px;color:#888}
+/* FILTER */
+.filter-bar{background:#fff;padding:12px;border-radius:14px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.filter-bar select,.filter-bar input{padding:10px 12px;border-radius:10px;border:1.5px solid #E5E7EB;outline:none;font-size:13px}
+/* GRID */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media(max-width:950px){.grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:650px){.grid{grid-template-columns:repeat(2,1fr)}}
+.card{background:#fff;border-radius:16px;overflow:hidden;cursor:pointer;border:1px solid #eee;transition:.2s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 25px rgba(0,0,0,.08)}
+.card-img{height:210px;position:relative}
+@media(max-width:650px){.card-img{height:160px}}
+.promo{position:absolute;top:10px;left:10px;background:#EF4444;color:#fff;font-size:11px;font-weight:800;padding:5px 8px;border-radius:999px}
+.wish{position:absolute;top:10px;right:10px;width:34px;height:34px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:17px;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.card-body{padding:12px;flex:1;display:flex;flex-direction:column}
+.card-body h3{font-size:13px;line-height:1.4;min-height:36px}
+.price{color:#059669;font-weight:800;font-size:16px;margin-top:6px}
+.old-price{font-size:12px;color:#999;text-decoration:line-through}
+.meta{font-size:11px;color:#666;margin:6px 0;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.stars{color:#F59E0B}
+.btn-buy{margin-top:auto;background:#059669;color:#fff;padding:11px;border-radius:10px;font-weight:700;width:100%}
+.btn-buy2{background:#111;color:#fff;padding:9px;border-radius:10px;font-weight:600;width:100%;margin-top:6px;font-size:12px}
+/* TESTI */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+@media(max-width:750px){.testi-grid{grid-template-columns:1fr}}
+.testi{background:#fff;padding:16px;border-radius:16px;border:1px solid #eee}
+.testi img{width:44px;height:44px;border-radius:999px}
+/* FOOTER */
+footer{background:#064E3B;color:#D1FAE5;padding:28px 0 16px;margin-top:30px}
+footer a{color:#D1FAE5;font-size:13px;display:block;margin:6px 0}
+.foot-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:18px}
+@media(max-width:750px){.foot-grid{grid-template-columns:1fr 1fr}}
+/* MODAL / DRAWER */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:none;align-items:center;justify-content:center;padding:14px}
+.overlay.show{display:flex}
+.modal{background:#fff;width:100%;max-width:880px;max-height:92vh;overflow:auto;border-radius:20px;padding:18px;position:relative}
+.close-btn{position:absolute;top:12px;right:12px;width:36px;height:36px;border-radius:999px;background:#F3F4F1;font-size:18px;z-index:10}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:700px){.detail-grid{grid-template-columns:1fr}}
+.detail-grid img{border-radius:16px;height:360px}
+.opt-row{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}
+.opt{padding:9px 14px;border-radius:999px;border:1.5px solid #E5E7EB;background:#fff;font-weight:600}
+.opt.active{background:#064E3B;color:#fff;border-color:#064E3B}
+.color-opt{width:36px;height:36px;border-radius:999px;border:3px solid #fff;box-shadow:0 0 0 1.5px #ddd;cursor:pointer}
+.color-opt.active{box-shadow:0 0 0 2.5px #059669}
+.qty{display:flex;align-items:center;gap:10px}
+.qty button{width:36px;height:36px;border-radius:999px;background:#F3F4F1;font-size:18px;font-weight:800}
+.drawer{position:fixed;top:0;right:0;height:100%;width:100%;max-width:420px;background:#fff;z-index:300;transform:translateX(100%);transition:.3s;display:flex;flex-direction:column}
+.drawer.show{transform:translateX(0)}
+.drawer-head{padding:16px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center}
+.cart-item{display:flex;gap:10px;padding:12px;border-bottom:1px solid #f0f0f0}
+.cart-item img{width:70px;height:70px;border-radius:10px}
+.wa-float{position:fixed;bottom:16px;right:16px;background:#25D366;color:#fff;padding:13px 18px;border-radius:999px;font-weight:800;z-index:150;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#111;color:#fff;padding:12px 18px;border-radius:999px;font-size:13px;font-weight:600;z-index:400;display:none}
+.toast.show{display:block}
+</style>
+</head>
+<body>
+<div class="topbar">🔥 GRATIS ONGKIR min. belanja Rp 150.000 • <b>FLASH SALE HARI INI - Diskon s.d 50%</b> • COD Seluruh Indonesia</div>
+
+<header><div class="wrap">
+<div class="h-row">
+<div class="logo" id="logoBtn">SALSABILA <em>CLOTHING</em><span>STYLE YOUR DAY, DEFINE YOURSELF.</span></div>
+<div class="search-box"><input id="searchInput" placeholder="Cari Oversized T-Shirt, Hoodie, Dress, Kemeja..."><button type="button" id="searchBtn">Cari</button></div>
+<div class="h-icons">
+<button type="button" class="icon-btn" id="wishBtn">♡<span class="badge hidden" id="wishBadge">0</span></button>
+<button type="button" class="icon-btn" id="cartBtn">🛒<span class="badge" id="cartBadge">0</span></button>
+<button type="button" class="btn-login" id="loginBtn">Masuk</button>
+<button type="button" class="btn-daftar" id="daftarBtn">Daftar</button>
+</div>
+</div>
+<div class="cat-row" id="catRow"></div>
+</div></header>
+
+<div class="wrap">
+<!-- HERO -->
+<section class="hero">
+<div class="hero-main"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200&q=80"><div class="hero-content"><span class="tag">✨ NEW COLLECTION 2026</span><h1>SELAMAT DATANG DI<br>SALSABILA CLOTHING</h1><p>Temukan Outfit Terbaikmu dengan Harga Terjangkau. Fashion wanita & pria, kualitas premium, harga bersahabat.</p><div class="btn-hero"><button type="button" class="btn-white" id="belanjaBtn">BELANJA SEKARANG →</button><button type="button" class="btn-outline" id="koleksiBtn">LIHAT KOLEKSI</button></div><p style="margin-top:12px;font-size:12px">⭐ 4.9/5 dari 12.400+ pelanggan • 📦 28rb+ produk terjual • 🚚 Kirim ke seluruh Indonesia</p></div></div>
+<div class="hero-side">
+<div class="mini-card"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&q=80"><div><b>Kaos Premium Mulai Rp 59rb</b><br><small>Best Seller • 4.9 ⭐</small></div></div>
+<div class="mini-card"><img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=800&q=80"><div><b>Outerwear & Jacket</b><br><small>Diskon s.d 40% hari ini</small></div></div>
+</div>
+</section>
+
+<!-- FLASH SALE -->
+<section class="flash">
+<div class="flash-head"><div><b style="font-size:18px">⚡ FLASH SALE - Berakhir Dalam</b><p style="font-size:12px;color:#666">Stok terbatas, siapa cepat dia dapat!</p></div><div class="timer"><span id="h">05</span><small>:</small><span id="m">59</span><small>:</small><span id="s">59</span></div></div>
+<div class="grid" id="flashGrid" style="margin-top:14px"></div>
+</section>
+
+<!-- KATEGORI -->
+<section class="sec"><div class="sec-head"><div><h2>🛍️ Jelajahi Kategori</h2><p>10 kategori fashion terlengkap</p></div></div><div class="cats-grid" id="catsGrid"></div></section>
+
+<!-- FILTER -->
+<section class="sec"><div class="sec-head"><div><h2 id="produkTitle">🔥 Produk Unggulan</h2><p id="produkCount">Menampilkan semua produk terbaik Salsabila Clothing</p></div></div>
+<div class="filter-bar">
+<select id="filterKategori"><option value="Semua">Semua Kategori</option></select>
+<select id="filterHarga"><option value="Semua">Semua Harga</option><option value="0-100000">Di bawah Rp 100rb</option><option value="100000-200000">Rp 100rb - 200rb</option><option value="200000-9999999">Di atas Rp 200rb</option></select>
+<select id="sortHarga"><option value="populer">Urutkan: Terpopuler</option><option value="termurah">Harga Termurah</option><option value="termahal">Harga Termahal</option><option value="terbaru">Produk Terbaru</option><option value="terlaris">Produk Terlaris</option></select>
+<button type="button" class="btn-daftar" id="resetFilter">Reset Filter</button>
+</div>
+<div class="grid" id="productGrid"></div>
+</section>
+
+<!-- TESTIMONI -->
+<section class="sec"><div class="sec-head"><h2>💬 Apa Kata Mereka?</h2><p>12.400+ ulasan positif dari pelanggan</p></div><div class="testi-grid">
+<div class="testi"><div style="display:flex;gap:10px;align-items:center"><img src="https://i.pravatar.cc/100?img=47"><div><b>Putri Ayu - Bandung</b><br><span style="color:#F59E0B">★★★★★</span> <small>• Hoodie Premium</small></div></div><p style="font-size:13px;margin-top:10px;line-height:1.6">"Kualitasnya juara! Hoodie-nya tebel, adem, jahitannya rapi. Order via WA fast respon banget, besoknya langsung dikirim. Recommended!"</p></div>
+<div class="testi"><div style="display:flex;gap:10px;align-items:center"><img src="https://i.pravatar.cc/100?img=32"><div><b>Nadia Salsabila - Jakarta</b><br><span style="color:#F59E0B">★★★★★</span> <small>• Dress Casual</small></div></div><p style="font-size:13px;margin-top:10px;line-height:1.6">"Dressnya cantik banget di foto sama aslinya sama persis. Ukurannya pas, bahannya adem. Udah 3x belanja di sini, gak pernah kecewa."</p></div>
+<div class="testi"><div style="display:flex;gap:10px;align-items:center"><img src="https://i.pravatar.cc/100?img=12"><div><b>Raka Pratama - Surabaya</b><br><span style="color:#F59E0B">★★★★★</span> <small>• Kaos Polos Premium</small></div></div><p style="font-size:13px;margin-top:10px;line-height:1.6">"Buat cowok juga banyak pilihannya. Kaosnya gak nerawang, sablonnya awet. Harga segini kualitas distro. Mantap Salsabila Clothing!"</p></div>
+</div></section>
+
+<!-- INFO -->
+<section class="sec"><div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px" id="infoGrid"><div style="background:#fff;padding:16px;border-radius:16px;text-align:center"><div style="font-size:28px">🚚</div><b>Pengiriman Cepat</b><p style="font-size:12px;color:#777">JNE, J&T, SiCepat, GoSend</p></div><div style="background:#fff;padding:16px;border-radius:16px;text-align:center"><div style="font-size:28px">💬</div><b>Order Via WhatsApp</b><p style="font-size:12px;color:#777">Fast Respon 08.00 - 22.00 WIB</p></div><div style="background:#fff;padding:16px;border-radius:16px;text-align:center"><div style="font-size:28px">↩️</div><b>Garansi Retur 7 Hari</b><p style="font-size:12px;color:#777">Jika size / produk tidak sesuai</p></div><div style="background:#fff;padding:16px;border-radius:16px;text-align:center"><div style="font-size:28px">💳</div><b>Bayar Mudah</b><p style="font-size:12px;color:#777">Transfer Bank, COD, QRIS</p></div></div></section>
+</div>
+
+<footer><div class="wrap"><div class="foot-grid"><div><h3 style="font-family:'Playfair Display',serif;font-size:22px">SALSABILA <span style="color:#FDE68A">CLOTHING</span></h3><p style="font-size:13px;line-height:1.6;margin:10px 0">Style Your Day, Define Yourself.<br>Toko fashion wanita & pria terlengkap, kualitas premium harga terjangkau. Melayani pengiriman ke seluruh Indonesia.</p><p style="font-size:13px">📍 Bandung, Jawa Barat, Indonesia<br>📱 WhatsApp: 0831-7652-3902<br>📸 Instagram: @salsabila.clothing<br>⏰ Setiap Hari 08.00 - 22.00 WIB</p></div><div><b>Kategori</b><a href="#">Kaos Wanita</a><a href="#">Kemeja</a><a href="#">Hoodie & Sweater</a><a href="#">Dress & Rok</a><a href="#">Fashion Pria</a></div><div><b>Bantuan</b><a href="#">Cara Order Via WhatsApp</a><a href="#">Konfirmasi Pembayaran</a><a href="#">Lacak Pesanan</a><a href="#">Kebijakan Pengembalian</a><a href="#">FAQ</a></div><div><b>Pengiriman</b><a href="#">JNE Reguler 2-4 Hari</a><a href="#">J&T Express 1-3 Hari</a><a href="#">SiCepat Halu</a><a href="#">GoSend Instant Bandung</a></div></div><p style="text-align:center;font-size:12px;margin-top:20px;border-top:1px solid rgba(255,255,255,.2);padding-top:14px">© 2026 SALSABILA CLOTHING. All Rights Reserved. • Dibuat dengan cinta di Bandung 💚</p></div></footer>
+
+<!-- DETAIL MODAL -->
+<div class="overlay" id="detailOverlay"><div class="modal"><button type="button" class="close-btn" id="closeDetail">✕</button><div class="detail-grid"><img id="dImg"><div><span id="dCat" style="background:#E7F9F0;color:#059669;padding:5px 10px;border-radius:999px;font-size:12px;font-weight:700"></span><h2 id="dName" style="margin:10px 0;font-size:22px"></h2><div id="dRating" style="font-size:13px;color:#666"></div><div style="margin:12px 0"><span id="dPrice" style="font-size:26px;font-weight:800;color:#059669"></span> <span id="dOld" style="color:#999;text-decoration:line-through"></span> <span id="dDisc" style="background:#FEE2E2;color:#EF4444;padding:4px 8px;border-radius:999px;font-size:12px;font-weight:800"></span></div><p id="dDesc" style="font-size:13px;line-height:1.7;color:#555"></p><p style="font-size:13px;margin-top:10px"><b>Stok:</b> <span id="dStok" style="color:#059669;font-weight:700"></span> • <b>Terjual:</b> <span id="dTerjual"></span></p><b style="font-size:13px">Ukuran:</b><div class="opt-row" id="sizeRow"></div><b style="font-size:13px">Warna:</b><div class="opt-row" id="colorRow"></div><b style="font-size:13px">Jumlah:</b><div class="qty" style="margin:10px 0"><button type="button" id="qtyMin">−</button><span id="qtyVal" style="font-weight:800;font-size:18px;min-width:30px;text-align:center">1</span><button type="button" id="qtyPlus">+</button><span id="qtyTotal" style="font-size:13px;color:#059669;font-weight:700"></span></div><div style="display:flex;gap:10px;flex-wrap:wrap"><button type="button" id="addCartBtn" style="flex:1;background:#111;color:#fff;padding:14px;border-radius:12px;font-weight:700">🛒 TAMBAH KE KERANJANG</button><button type="button" id="buyNowBtn" style="flex:1;background:#059669;color:#fff;padding:14px;border-radius:12px;font-weight:800">💬 BELI SEKARANG VIA WA</button></div><p style="font-size:12px;color:#888;margin-top:10px">✅ Garansi 7 hari retur • 🚚 Kirim H+1 • 💬 Fast respon WA</p></div></div></div></div>
+
+<!-- CART DRAWER -->
+<div class="drawer" id="cartDrawer"><div class="drawer-head"><b>🛒 Keranjang Belanja (<span id="cartCount">0</span>)</b><button type="button" id="closeCart" style="font-size:20px;background:none">✕</button></div><div id="cartItems" style="flex:1;overflow:auto"></div><div style="padding:16px;border-top:1px solid #eee"><div style="display:flex;justify-content:space-between"><span>Subtotal</span><b id="cartSubtotal">Rp 0</b></div><div style="display:flex;justify-content:space-between;font-size:12px;color:#777;margin:4px 0"><span>Ongkir (dihitung admin WA)</span><span>Gratis* / Konfirmasi</span></div><div style="display:flex;justify-content:space-between;font-size:18px;margin:8px 0"><b>Total</b><b style="color:#059669" id="cartTotal">Rp 0</b></div><button type="button" id="checkoutWA" style="width:100%;background:#25D366;color:#fff;padding:14px;border-radius:12px;font-weight:800">💬 CHECKOUT VIA WHATSAPP</button><button type="button" id="
